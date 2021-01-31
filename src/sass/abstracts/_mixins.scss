@@ -1,0 +1,32 @@
+@mixin columns ($width) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  >* {
+    flex-basis: $width;
+  }
+}
+
+@mixin media-laptop {
+  @media (max-width: $content-width) { @content }; // 1197px;
+}
+
+@mixin media-tablet-middle {
+  @media (max-width: $tablet-middle-width){ @content }; // 992px;
+}
+
+@mixin media-tablet {
+  @media (max-width: $tablet-width) { @content }; // 768px;
+}
+
+@mixin media-mobile {
+  @media (max-width: $mobile-big-width) { @content }; // 480px;
+}
+
+@mixin media-mobile-small {
+  @media (max-width: $mobile-small-width) { @content }; //320px;
+}
+
+@mixin media-landscape {
+  @media screen and (orientation: landscape) and (max-width: $ladscape-width) and (max-height: 480px) {@content}; // lanscape orientation
+}
