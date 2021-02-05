@@ -7,9 +7,10 @@ body {
   padding: 0;
   font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
-  background: rgb(9,15,55);
-  background: linear-gradient(0deg, rgba(9,15,55,1) 14%, rgba(16,17,66,1) 50%, rgba(9,15,55,1) 83%);
-  background-repeat: no-repeat;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(30, 28, 51, 1) 100%),
+    url('./img/test-bg-4.jpg')  center center / cover no-repeat
+    ;
   @extend %custom-scroll;
   width: 100%;
   min-height: 100vh;

@@ -13,10 +13,11 @@
 
 
 // Layouts
-@import './layouts/container';
 @import './layouts/columns';
 
 
 // Components
 @import './components/buttons';
 @import './components/header';
+@import './components/content';
+@import './components/weather';

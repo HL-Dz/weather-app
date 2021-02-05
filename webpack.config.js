@@ -63,18 +63,18 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, "src/img"),
-    //       to: path.resolve(__dirname, "dist/img"),
-    //     },
-    //     {
-    //       from: path.resolve(__dirname, "src/fonts"),
-    //       to: path.resolve(__dirname, "dist/fonts"),
-    //     },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/img"),
+          to: path.resolve(__dirname, "dist/img"),
+        },
+        // {
+        //   from: path.resolve(__dirname, "src/fonts"),
+        //   to: path.resolve(__dirname, "dist/fonts"),
+        // },
+      ],
+    }),
     new MiniCssExtarctPlugin({
       filename: fileName("css"),
     }),
