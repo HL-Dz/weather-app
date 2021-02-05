@@ -1,0 +1,22 @@
+.btn-main {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px;
+  background: rgba(174, 181, 185, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+
+  @extend %transition;
+
+  &:hover {
+    background: rgba(174, 181, 185, 0.7);
+  }
+}
+
+.refresh-bg {
+  margin-right: 10px;
+}

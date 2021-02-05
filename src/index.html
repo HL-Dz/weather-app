@@ -10,6 +10,42 @@
   <title>Weather-app</title>
 </head>
 <body>
+  <header class="header">
+    <div class="container">
+      <div class="control-block">
+        <div class="control-block__left">
+          
+          <button class="btn-main refresh-bg">
+            <i class="fas fa-sync-alt refresh-icon"></i>
+          </button>
+
+          <div class="language-menu">
+            <button class="btn-main current-lang">
+              <span class="current-lang__elem">EN</span>
+              <i class="fas fa-angle-down arrow-down"></i>
+            </button>
+
+            <div class="dropdown">
+              <button class="btn-main dropdown__item" id="en">EN</button>
+              <button class="btn-main dropdown__item" id="ru">RU</button>
+              <button class="btn-main dropdown__item" id="be">Be</button>
+            </div>
+          </div>
+
+          <div class="temp-block">
+            <button class="btn-main temp-celsius inactive-elem">°C</button>
+            <button class="btn-main temp-fahrenheit">°F</button>
+          </div>
+        </div>
+
+        <div class="control-block__right">
+          <input type="search" class="search-location" name="search-location" placeholder="Serach city...">
+          <button class="btn-main search-input">Search</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
   
 </body>
 </html>
