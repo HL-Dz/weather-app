@@ -1,9 +1,27 @@
+.weather {
+  @include media-tablet {
+    width: 100%;
+  }
+}
+
 .location {
   display: flex;
   justify-content: center;
   font-size: 5rem;
   font-weight: bold;
   color: $white;
+
+  @include media-tablet {
+    font-size: 4rem;
+  }
+
+  @include media-mobile {
+    font-size: 2.5rem;
+  }
+
+  @include media-landscape  {
+    font-size: 2.3rem;
+  }
 }
 
 .location__city {
@@ -15,12 +33,36 @@
   text-align: center;
   color: $white;
   font-weight: bold;
+
+  @include media-landscape  {
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+  }
 }
 
 .forecast {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+
+  @include media-tablet-middle {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  @include media-mobile {
+    width: 100%;
+    background: rgba(14, 5, 27, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  @include media-landscape {
+    width: 100%;
+    background: rgba(14, 5, 27, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+  }
 }
 
 .forecast__temperature {
@@ -29,6 +71,22 @@
   font-weight: bold;
   color: $white;
   text-shadow: 10px 10px rgba(255, 255, 255, 0.3);
+
+  @include media-tablet-middle {
+    font-size: 20rem;
+  }
+
+  @include media-tablet {
+    font-size: 15rem;
+  }
+
+  @include media-mobile {
+    font-size: 8rem;
+  }
+
+  @include media-landscape  {
+    font-size: 8rem;
+  }
 }
 
 .forecast__info {
@@ -44,6 +102,18 @@
 
   &>* {
     margin-bottom: 10px;
+
+    @include media-tablet {
+      margin-bottom: 5px;
+    }
+
+    @include media-mobile {
+      font-size: 1.7rem;
+    }
+
+    @include media-landscape {
+      font-size: 1.7rem;
+    }
   }
 }
 
@@ -56,6 +126,25 @@
   max-width: 250px;
   margin-left: -50px;
   margin-bottom: -50px;
+
+  @include media-tablet {
+    width: 200px;
+    margin-top: -20px;
+  }
+
+  @include media-mobile {
+    width: 110px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: -20px;
+  }
+
+  @include media-landscape  {
+    width: 110px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: -20px;
+  }
 }
 
 .weather-next {
@@ -65,14 +154,35 @@
   font-weight: bold;
   color: $white;
   text-transform: uppercase;
+
+  @include media-tablet {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .card {
   border-right: 1px solid rgb(66, 67, 70);
+  padding: 0 10px;
 
   &:last-child {
-  border-right: none;
- }
+    border-right: none;
+
+    @include media-tablet {
+      border-bottom: none;
+    }
+  }
+
+  @include media-tablet {
+    padding: 10px 0 0 0;
+    border-right: none;
+    width: 100%;
+    border-bottom: 1px solid $grey;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
 }
 
 .card__day {
@@ -83,13 +193,37 @@
   display: flex;
   align-items: center;
   margin-top: -20px;
+
+  @include media-tablet {
+    justify-content: center;
+  }
 }
 
 .card__temperature {
   font-size: 8rem;
   font-weight: bold;
+
+  @include media-tablet-middle {
+    font-size: 7rem;
+  }
+
+  @include media-tablet {
+    font-size: 5rem;
+  }
+
+  @include media-landscape {
+    font-size: 4rem;
+  }
 }
 
 .card__img {
   width: 110px;
+
+  @include media-tablet {
+    width: 90px;
+  }
+
+  @include media-landscape {
+    width: 80px;
+  }
 }

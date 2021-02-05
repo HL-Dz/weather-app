@@ -52,4 +52,12 @@ h6 {
   max-width: 1400px;
   padding: 0 30px;
   margin: 0 auto;
+
+  @include media-mobile {
+    padding: 0 5px;
+  }
+
+  @include media-landscape {
+    padding: 0 10px;
+  }
 }
