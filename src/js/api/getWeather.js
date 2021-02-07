@@ -1,4 +1,4 @@
-async function getWeater (city) {
+async function getWeather (city) {
   const api = {
     baseUrl: 'https://api.openweathermap.org/data/2.5/',
     token: '75d9ef8286c75add6033e3bad1957821'
@@ -15,4 +15,4 @@ async function getWeater (city) {
 };
 
 
-export default getWeater;
+export default getWeather;
