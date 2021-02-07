@@ -101,6 +101,7 @@
 .search-block {
   position: relative;
   overflow: hidden;
+  width: 350px;
 
   &_active {
     .search__line {
@@ -110,7 +111,6 @@
 
   @include media-tablet {
     width: 100%;
-    padding-right: 15px;
   }
 }
 
@@ -163,14 +163,11 @@
 
   &:focus {
     background: transparent;
+    padding-left: 0;
 
-    .search__line {
-      left: 0;
-    }
-
-    @include media-tablet {
-      padding-left: 0px;
-    }
+    // @include media-tablet {
+    //   padding-left: 0px;
+    // }
   }
 
   @include media-tablet {

@@ -1,4 +1,4 @@
-import getWeather from '../api/getWeather.js';
+import getWeatherByAPI from '../api/getWeatherByAPI.js';
 
 const generateTemplate = () => {
   const header = document.createElement('header');
@@ -56,19 +56,24 @@ class ControlBlock {
   }
 
   setQuery(){
-    const value = this.$searchLocation.value;
-
-    getWeather(value)
-      .then(weather => {
-        console.log(weather);
-      })
+    this.getWeather();
   }
 
   setQueryWithKeyboard(e){
-    const value = this.$searchLocation.value;
-
     if(e.keyCode == 13) {
-      getWeather(value)
+      this.getWeather();
+    }
+  }
+
+
+  getWeather () {
+    const value = this.$searchLocation.value;
+    if(!value) {
+      alert('Please, enter city.');
+      return;
+    }
+    
+    getWeatherByAPI(value)
       .then(weather => {
         console.log(weather);
         this.$searchLocation.blur();
@@ -76,7 +81,6 @@ class ControlBlock {
       }).catch(err => {
         console.log(err);
       })
-    }
   }
   
 }

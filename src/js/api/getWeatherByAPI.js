@@ -1,4 +1,4 @@
-async function getWeather (city) {
+async function getWeatherByAPI (city) {
   const api = {
     baseUrl: 'https://api.openweathermap.org/data/2.5/',
     token: '75d9ef8286c75add6033e3bad1957821'
@@ -10,9 +10,9 @@ async function getWeather (city) {
 
     return data;
   } catch (err) {
-    err.message = `Something wrong: ${city}`;
+    throw new Error('Something wrong!')
   }
 };
 
 
-export default getWeather;
+export default getWeatherByAPI;
