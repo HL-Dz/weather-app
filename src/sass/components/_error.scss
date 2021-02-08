@@ -1,0 +1,67 @@
+.error {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  font-weight: bold;
+  color: rgb(233, 229, 229);
+  background: rgb(142,22,22);
+  background: linear-gradient(0deg, rgba(148, 48, 48, 0.9) 14%, rgba(83, 22, 13, 0.9) 83%);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(226, 224, 224, 0.637);
+  z-index: -1;
+  opacity: 0;
+  @extend %transition;
+
+  &_active {
+    opacity: 1;
+    z-index: 1;
+    animation: show-error 3.5s ease;
+  }
+}
+
+
+@keyframes show-error {
+  0% {
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+  30% {
+    top: 120%;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  40% {
+    top: 120%;
+    opacity: 1;
+    z-index: 1;
+  }
+  50% {
+    top: 120%;
+    opacity: 1;
+    z-index: 1;
+  }
+  60% {
+    top: 120%;
+    opacity: 1;
+    z-index: 1;
+  }
+  70% {
+    top: 120%;
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+}

@@ -1,4 +1,5 @@
 import getWeatherByAPI from '../api/getWeatherByAPI.js';
+import renderError from './renderError.js';
 
 const generateTemplate = () => {
   const header = document.createElement('header');
@@ -48,6 +49,7 @@ class ControlBlock {
   setup(){
     this.$btnSearch = document.querySelector('.search-input');
     this.$searchLocation = document.querySelector('.search-location');
+    this.$controlBlockRigth = document.querySelector('.control-block__right');
 
     this.setQuery = this.setQuery.bind(this);
     this.setQueryWithKeyboard = this.setQueryWithKeyboard.bind(this);
@@ -69,18 +71,37 @@ class ControlBlock {
   getWeather () {
     const value = this.$searchLocation.value;
     if(!value) {
-      alert('Please, enter city.');
+      let errorText = 'Empty field! Please, enter city.';
+      this.getError(errorText);
       return;
     }
     
     getWeatherByAPI(value)
       .then(weather => {
+        if(weather.cod === '404') {
+          this.getError(weather.message);
+        }
+        
         console.log(weather);
         this.$searchLocation.blur();
         this.$searchLocation.value = '';
       }).catch(err => {
         console.log(err);
       })
+  }
+
+  getError(errorText){
+    const errorContent = renderError(errorText);
+    errorContent.classList.add('error_active');
+    this.$controlBlockRigth.prepend(errorContent);
+    this.$searchLocation.disabled = true;
+    this.$btnSearch.disabled = true;
+
+    setTimeout(() => {
+      this.$searchLocation.disabled = false;
+      this.$btnSearch.disabled = false;
+      errorContent.remove();
+    }, 3300);
   }
   
 }

@@ -90,6 +90,7 @@
 
 .control-block__right {
   display: flex;
+  position: relative;
 
   @include media-tablet {
     justify-content: center;
@@ -163,11 +164,7 @@
 
   &:focus {
     background: transparent;
-    padding-left: 0;
-
-    // @include media-tablet {
-    //   padding-left: 0px;
-    // }
+    // padding-left: 0;
   }
 
   @include media-tablet {
@@ -181,6 +178,7 @@
 
 .search-input {
   border-radius: 0 5px 5px 0;
+  width: 90px;
 
   @include media-landscape  {
     padding: 7px;
