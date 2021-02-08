@@ -50,11 +50,16 @@ class ControlBlock {
     this.$btnSearch = document.querySelector('.search-input');
     this.$searchLocation = document.querySelector('.search-location');
     this.$controlBlockRigth = document.querySelector('.control-block__right');
+    this.$searchBlock = document.querySelector('.search-block');
 
     this.setQuery = this.setQuery.bind(this);
     this.setQueryWithKeyboard = this.setQueryWithKeyboard.bind(this);
+    this.setInputAnimation = this.setInputAnimation.bind(this);
+    this.removeInputAnimation = this.removeInputAnimation.bind(this);
     this.$btnSearch.addEventListener('click', this.setQuery);
     this.$searchLocation.addEventListener('keypress', this.setQueryWithKeyboard);
+    this.$searchLocation.addEventListener('focus', this.setInputAnimation);
+    this.$searchLocation.addEventListener('blur', this.removeInputAnimation);
   }
 
   setQuery(){
@@ -102,6 +107,14 @@ class ControlBlock {
       this.$btnSearch.disabled = false;
       errorContent.remove();
     }, 3300);
+  }
+
+  setInputAnimation(){
+    this.$searchBlock.classList.add('search-block_active');
+  }
+
+  removeInputAnimation(){
+    this.$searchBlock.classList.remove('search-block_active');
   }
   
 }
