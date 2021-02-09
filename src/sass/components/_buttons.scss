@@ -29,3 +29,19 @@
   margin-right: 10px;
   width: 49px;
 }
+
+.refresh-icon {
+  @extend %transition;
+  &_active {
+    animation: icon-rotation 0.5s linear infinite;
+  }
+}
+
+@keyframes icon-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
