@@ -1,5 +1,6 @@
 import getWeatherByAPI from '../api/getWeatherByAPI.js';
 import renderError from './renderError.js';
+import { bgSwitcher } from '../../index.js';
 
 const generateTemplate = () => {
   const header = document.createElement('header');
@@ -10,7 +11,7 @@ const generateTemplate = () => {
     <div class="control-block">
       <div class="control-block__left">
         
-        <button class="btn-main refresh-bg">
+        <button class="btn-main refresh-bg" id="bg-switcher">
           <i class="fas fa-sync-alt refresh-icon"></i>
         </button>
 
@@ -85,11 +86,13 @@ class ControlBlock {
       .then(weather => {
         if(weather.cod === '404') {
           this.getError(weather.message);
+        } else {
+          bgSwitcher.updateBg();
+          console.log(weather);
+          this.$searchLocation.blur();
+          this.$searchLocation.value = '';
         }
         
-        console.log(weather);
-        this.$searchLocation.blur();
-        this.$searchLocation.value = '';
       }).catch(err => {
         console.log(err);
       })

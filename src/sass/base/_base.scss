@@ -5,12 +5,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+  position: relative;
   font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(30, 28, 51, 1) 100%),
-    url('./img/test-bg-3.jpg')  center center / cover no-repeat
-    ;
   @extend %custom-scroll;
   width: 100%;
   min-height: 100vh;
@@ -60,4 +57,18 @@ h6 {
   @include media-landscape {
     padding: 0 10px;
   }
+}
+
+.main-bg {
+  background-repeat: no-repeat;
+  background-image: url('./img/bg/test-bg-3.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: rgba(0,0,0, 0.8);
+  transition:  background-color 1.5s ease;
+
+    &_inactive {
+      background-color: rgba(0,0,0, 1);
+    }
 }

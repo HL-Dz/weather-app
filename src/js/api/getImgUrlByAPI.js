@@ -7,7 +7,7 @@ async function getBackgroundByAPI() {
   try {
     let response = await fetch(`${api.baseUrl}?orientation=landscape&per_page=1&query=nature&client_id=${api.token}`)
     let data = await response.json();
-    return data;
+    return data.urls.full;
   } catch (error) {
     throw new Error(`Something wrong: ${error}`);    
   }

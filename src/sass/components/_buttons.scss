@@ -28,6 +28,12 @@
 .refresh-bg {
   margin-right: 10px;
   width: 49px;
+
+  &_active {
+    .refresh-icon {
+      animation: icon-rotation 0.5s linear infinite;
+    }
+  }
 }
 
 .refresh-icon {
