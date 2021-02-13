@@ -12,6 +12,9 @@ const generateTemplate = () => {
       <div class="control-block__left">
         
         <button class="btn-main refresh-bg" id="bg-switcher">
+          <span class="mountain-1"></span>
+          <span class="mountain-2"></span>
+          <span class="sun"></span>
           <i class="fas fa-sync-alt refresh-icon"></i>
         </button>
 
