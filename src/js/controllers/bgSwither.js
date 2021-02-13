@@ -27,11 +27,13 @@ class BgSwitcher {
     } catch {
       imgUrl = DEFAULT_BACKGROUND;
     } finally {
-      setTimeout(() => {
+      const backgroundImg = new Image();
+      backgroundImg.addEventListener('load', () => {
         this.container.style.backgroundImage = `url(${imgUrl})`;
         this.container.classList.remove('main-bg_inactive');
         this.elem.classList.remove('refresh-bg_active');
-      }, 2000);
+      })
+      backgroundImg.src = imgUrl;
     }
   }
 };

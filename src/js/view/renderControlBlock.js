@@ -89,9 +89,10 @@ class ControlBlock {
         } else {
           bgSwitcher.updateBg();
           console.log(weather);
-          this.$searchLocation.blur();
-          this.$searchLocation.value = '';
         }
+
+        this.$searchLocation.blur();
+        this.$searchLocation.value = '';
         
       }).catch(err => {
         console.log(err);
