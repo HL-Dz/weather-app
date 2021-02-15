@@ -1,6 +1,6 @@
 import getWeatherByAPI from '../api/getWeatherByAPI.js';
 import renderError from './renderError.js';
-import { bgSwitcher } from '../../index.js';
+import { bgSwitcher, weatherBlock } from '../../index.js';
 
 const generateTemplate = () => {
   const header = document.createElement('header');
@@ -83,9 +83,9 @@ class ControlBlock {
       let errorText = 'Empty field! Please, enter city.';
       this.getError(errorText);
       return;
-    }
-    
-    getWeatherByAPI(value)
+    } else {
+      weatherBlock.hide();
+      getWeatherByAPI(value)
       .then(weather => {
         if(weather.cod === '404') {
           this.getError(weather.message);
@@ -96,10 +96,14 @@ class ControlBlock {
 
         this.$searchLocation.blur();
         this.$searchLocation.value = '';
+        setTimeout(() => {
+          weatherBlock.show();
+        }, 1000);
         
       }).catch(err => {
         console.log(err);
       })
+    }
   }
 
   getError(errorText){

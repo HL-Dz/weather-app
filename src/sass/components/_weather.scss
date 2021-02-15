@@ -1,4 +1,11 @@
 .weather {
+  position: relative;
+  transition: opacity 0.5s ease;
+  
+  &_hidden {
+    opacity: 0;
+  }
+
   @include media-tablet {
     width: 100%;
   }

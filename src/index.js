@@ -9,4 +9,4 @@ const bgSwitcher = new BgSwitcher(document.querySelector('#bg-switcher'), docume
 const weatherBlock = new WeatherBlock();
 
 
-export { bgSwitcher };
+export { bgSwitcher, weatherBlock };

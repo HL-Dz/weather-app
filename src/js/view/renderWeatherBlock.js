@@ -69,11 +69,24 @@ const generateWeatherTemplate = () => {
 export class WeatherBlock {
   constructor(){
     this.render();
+    this.setup();
   }
 
   render() {
     let weatherBlock = generateWeatherTemplate();
     weatherBlock.appendAfter(document.querySelector('header.header'));
+  }
+
+  setup(){
+    this.$weather = document.querySelector('.weather');
+  }
+
+   hide(){
+    this.$weather.classList.add('weather_hidden');
+  }
+
+  show(){
+    this.$weather.classList.remove('weather_hidden');
   }
 }
 

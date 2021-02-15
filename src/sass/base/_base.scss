@@ -66,9 +66,9 @@ h6 {
   background-position: center center;
   background-blend-mode: multiply;
   background-color: rgba(0,0,0, 0.7);
-  transition:  background-color 1s ease;
+  transition:  background-color 0.7s ease;
 
     &_inactive {
-      background-color: rgba(8, 8, 8, 0.95);     
+      background-color: rgba(8, 8, 8, 1);     
     }
 }
