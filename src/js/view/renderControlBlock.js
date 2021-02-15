@@ -84,14 +84,17 @@ class ControlBlock {
       this.getError(errorText);
       return;
     } else {
-      weatherBlock.hide();
       getWeatherByAPI(value)
       .then(weather => {
         if(weather.cod === '404') {
           this.getError(weather.message);
         } else {
+          weatherBlock.hide();
           bgSwitcher.updateBg();
           console.log(weather);
+          setTimeout(() => {
+            weatherBlock.rerenderTodayWeather(weather);
+          }, 500);
         }
 
         this.$searchLocation.blur();

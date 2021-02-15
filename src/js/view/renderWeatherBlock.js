@@ -1,3 +1,5 @@
+import { setTodayWeather } from '../units/setters.js';
+
 Element.prototype.appendAfter = function (element) {
   element.parentNode.insertBefore(this, element.nextSibling);
 };
@@ -87,6 +89,10 @@ export class WeatherBlock {
 
   show(){
     this.$weather.classList.remove('weather_hidden');
+  }
+
+  rerenderTodayWeather(weather) {
+    setTodayWeather(weather);
   }
 }
 
