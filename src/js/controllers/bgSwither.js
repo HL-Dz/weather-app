@@ -1,7 +1,7 @@
 import getBackgroundByAPI from '../api/getImgUrlByAPI.js';
 
 
-const DEFAULT_BACKGROUND = './img/bg/test-bg-3.jpg';
+const DEFAULT_BACKGROUND = './img/bg/test-bg-5.jpg';
 
 
 class BgSwitcher {
